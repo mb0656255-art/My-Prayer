@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درب السالكين | العقيدة والفقه والمنهج (النسخة النهائية الموسوعية)</title>
+    <meta name="description" content="منصة موسوعية متكاملة للمحتوى الشرعي: التوحيد، العقيدة السلفية، والفقه المحكم بالدليل من القرآن والسنة الصحيحة.">
+    
+    <style>
+        :root {
+            --color-bg-primary: #0d0d0d;
+            --color-bg-secondary: #1a1a1a;
+            --color-accent: #cdb48b; 
+            --color-muted: #9fa9a0;
+            --color-text-main: #efe8d8;
+            --color-card-bg: rgba(255, 255, 255, 0.04);
+            --color-glass-effect: rgba(255, 255, 255, 0.05);
+            --color-subtle-border: rgba(255, 255, 255, 0.03);
+            --space-xs: 4px; --space-sm: 8px; --space-md: 16px; 
+            --space-lg: 24px; --space-xl: 48px;
+            --radius-lg: 16px; --radius-md: 10px;
+            --shadow-level-1: 0 4px 12px rgba(0,0,0,0.5);
+            --shadow-level-2: 0 8px 20px rgba(0,0,0,0.8);
+            --max-width: 1200px;
+            --transition-default: all 0.35s ease;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { 
+            height: 100%; 
+            font-family: "Amiri", "Almarai", serif; 
+            background: linear-gradient(180deg, var(--color-bg-primary), var(--color-bg-secondary)); 
+            color: var(--color-text-main); 
+            line-height: 1.8; 
+            -webkit-font-smoothing: antialiased; 
+            transition: var(--transition-default);
+        }
+        h1, h2, h3, h4, h5, h6 { font-family: "Amiri", serif; font-weight: 700; margin-bottom: var(--space-md); }
+        a { text-decoration: none; color: inherit; }
+        p { margin-bottom: var(--space-md); }
+        .summary { font-size: 1.1rem; color: var(--color-muted); border-right: 3px solid var(--color-accent); padding-right: var(--space-md); margin-bottom: var(--space-lg); }
+        .text-accent { color: var(--color-accent); font-weight: 700; }
+        .container { max-width: var(--max-width); margin: 0 auto; padding-left: var(--space-lg); padding-right: var(--space-lg); }
+        .main-content { margin-top: var(--space-lg); margin-bottom: var(--space-lg); animation: fadeIn 0.6s ease; }
+        .page-title { font-size: 32px; text-align: center; color: var(--color-accent); margin-bottom: var(--space-lg); text-shadow: 0 2px 6px rgba(0,0,0,0.6); }
+
+        /* HEADER */
+        .header { position: sticky; top: 0; z-index: 999; backdrop-filter: blur(12px); background: linear-gradient(180deg, rgba(20,20,20,0.95), rgba(10,10,10,0.85)); border-bottom: 1px solid var(--color-subtle-border); box-shadow: var(--shadow-level-2); }
+        .header__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-lg); padding: var(--space-md) var(--space-lg); }
+        .header__logo { font-size: 38px !important; color: var(--color-accent); font-weight: 800 !important; letter-spacing: 0.5px !important; text-shadow: 2px 2px 10px rgba(205,180,139,0.3); }
+        .header__tagline { color: var(--color-muted); margin-top: var(--space-xs); font-size: 14px; }
+        .header__clock { text-align: left; font-weight: 600; font-size: 16px; color: var(--color-text-main); line-height: 1.4; }
+        .header__clock-hijri { display: block; color: var(--color-muted); font-size: 14px; margin-top: var(--space-xs); }
+
+        /* NAV */
+        .nav-menu { display: flex; justify-content: center; gap: var(--space-md); padding: var(--space-sm) var(--space-lg); border-top: 1px solid var(--color-subtle-border); border-bottom: 1px solid var(--color-subtle-border); background: linear-gradient(180deg, rgba(25,25,25,0.7), rgba(10,10,10,0.5)); position: sticky; top: 78px; z-index: 998; }
+        .nav-menu__btn { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); color: var(--color-text-main); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-md); cursor: pointer; font-size: 16px; transition: var(--transition-default); position: relative; overflow: hidden; z-index: 1; }
+        .nav-menu__btn::after { content: ""; position: absolute; width: 100%; height: 0%; top: 0; left: 0; background: var(--color-accent); opacity: 0.2; transition: height 0.3s ease; z-index: -1; }
+        .nav-menu__btn:hover::after { height: 100%; }
+        .nav-menu__btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-level-1); }
+        .nav-menu__btn--active { background: linear-gradient(90deg, rgba(205,180,139,0.15), rgba(205,180,139,0.05)); border: 1px solid rgba(205,180,139,0.3); color: var(--color-accent); }
+
+        /* CARDS & SECTIONS */
+        .card { background: var(--color-card-bg); border-radius: var(--radius-lg); padding: var(--space-lg); min-height: 120px; position: relative; overflow: hidden; cursor: pointer; transition: var(--transition-default); box-shadow: var(--shadow-level-1); }
+        .card:hover { transform: translateY(-8px) scale(1.02); box-shadow: var(--shadow-level-2); }
+        .card::before { content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%); opacity: 0.1; transition: var(--transition-default); }
+        .card:hover::before { opacity: 0.25; }
+        .section-box { background: var(--color-glass-effect); padding: var(--space-lg); margin-bottom: var(--space-lg); border-radius: var(--radius-lg); box-shadow: var(--shadow-level-1); backdrop-filter: blur(8px); transition: var(--transition-default); }
+        .section-box:hover { transform: translateY(-3px); box-shadow: var(--shadow-level-2); }
+        .prayer-times { display: flex; flex-wrap: wrap; gap: var(--space-md); justify-content: space-around; margin-top: var(--space-md); }
+        .prayer-times__item { background: var(--color-card-bg); padding: var(--space-md) var(--space-lg); border-radius: var(--radius-md); min-width: 140px; text-align: center; font-weight: 600; transition: var(--transition-default); box-shadow: var(--shadow-level-1); }
+        .prayer-times__item:hover { transform: translateY(-4px); box-shadow: var(--shadow-level-2); }
+        .countdown-box { background: var(--color-card-bg); padding: var(--space-md) var(--space-lg); border-radius: var(--radius-md); min-width: 220px; text-align: center; font-size: 24px; font-weight: 700; box-shadow: var(--shadow-level-1); transition: var(--transition-default); margin: var(--space-md) auto 0; }
+        .countdown-box:hover { transform: scale(1.02); box-shadow: var(--shadow-level-2); }
+
+        /* EVENTS */
+        .event-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg); margin-top: var(--space-md); }
+        .event-card { min-height: auto; text-align: center; }
+        .event-card h3 { color: var(--color-accent); font-size: 1.5rem; margin-bottom: var(--space-sm); }
+        .event-timer { font-size: 1.8rem; padding: var(--space-sm); margin: var(--space-md) auto 0; background: var(--color-glass-effect); border: 1px solid rgba(205,180,139,0.1); }
+        .event-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-level-2); }
+
+        /* CONTENT STYLES */
+        .blockquote { border-right: 4px solid var(--color-accent); padding: var(--space-sm) var(--space-md); margin: var(--space-lg) 0; font-style: italic; background: rgba(205,180,139,0.05); border-radius: var(--radius-md); }
+        .blockquote cite { display: block; text-align: left; font-size: 0.9em; color: var(--color-muted); margin-top: var(--space-sm); font-style: normal; }
+        .content-section { border-bottom: 1px dashed var(--color-subtle-border); padding-bottom: var(--space-lg); margin-top: var(--space-lg); }
+        .content-section h4 { color: var(--color-accent); font-size: 1.3rem; margin-top: var(--space-md); }
+        .content-article { font-size: 1.05rem; }
+
+        /* MEDIA QUERIES */
+        @media (max-width: 980px) {
+            .header__inner { flex-direction: column; align-items: flex-start; gap: var(--space-md); }
+            .nav-menu { top: 120px; flex-wrap: wrap; }
+            .nav-menu__btn { flex-basis: 45%; }
+            .prayer-times { justify-content: space-between; }
+            .prayer-times__item { min-width: 100px; padding: var(--space-sm) var(--space-md); font-size: 0.9rem; }
+        }
+
+        @media (max-width: 600px) {
+            .nav-menu__btn { flex-basis: 100%; }
+            .container { padding-left: var(--space-sm); padding-right: var(--space-sm); }
+            .header__logo { font-size: 30px !important; }
+            .main-content { padding: 0; margin-top: var(--space-md); }
+            .prayer-times { flex-direction: column; align-items: stretch; }
+            .countdown-box { min-width: 100%; }
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    </head>
+<body>
+
+    <header class="header" id="siteHeader">
+        <div class="container header__inner">
+            <div class="header__brand">
+                <a href="/" class="header__logo">{درب السالكين}</a>
+                <span class="header__tagline">على منهاج النبوة والصحابة</span>
+            </div>
+            <time class="header__clock" datetime="2025-12-04">
+                الخميس 04 ديسمبر 2025 <span class="header__clock-hijri" id="nowHijri">2 رمضان 1447 هـ</span>
+            </time>
+        </div>
+    </header>
+
+    <nav class="nav-menu">
+        <div class="container" style="padding: 0;">
+            <a href="#aqidah" class="nav-menu__btn nav-menu__btn--active">العقيدة والتوحيد</a>
+            <a href="#fiqh" class="nav-menu__btn">أركان الإسلام (الفقه)</a>
+            <a href="#events" class="nav-menu__btn">المناسبات الدينية</a>
+            <a href="#scholars" class="nav-menu__btn">منهج الأئمة السلف</a>
+        </div>
+    </nav>
+
+    <main class="container main-content">
+
+        <section class="section-box" aria-labelledby="times-heading">
+            <h2 id="times-heading" class="page-title" style="margin-bottom: 15px;">🕋 أوقات الصلاة والفرض القادم</h2>
+            <div class="prayer-times" role="region" aria-label="أوقات الصلوات اليومية">
+                <div class="prayer-times__item" data-prayer-name="الفجر" data-time="06:07">الفجر: 06:07</div>
+                <div class="prayer-times__item" data-prayer-name="الشروق" data-time="07:37">الشروق: 07:37</div>
+                <div class="prayer-times__item" data-prayer-name="الظهر" data-time="12:35">الظهر: 12:35</div>
+                <div class="prayer-times__item" data-prayer-name="العصر" data-time="15:13">العصر: 15:13</div>
+                <div class="prayer-times__item" data-prayer-name="المغرب" data-time="17:35">17:35 :المغرب</div>
+                <div class="prayer-times__item" data-prayer-name="العشاء" data-time="19:30">العشاء: 19:30</div>
+            </div>
+            <div class="countdown-item" style="margin-top: 25px;">
+                <p id="next-prayer-name">يتبقى على صلاة <span class="text-accent">المغرب</span>:</p>
+                <div class="countdown-box" role="timer" aria-live="polite" data-target-type="prayer">01:45:30</div>
+            </div>
+        </section>
+
+        <section class="section-box" id="events" aria-labelledby="events-heading">
+            <h2 id="events-heading" class="page-title" style="text-align: right;">🌙 المناسبات الدينية الرئيسية</h2>
+            <div class="event-cards-grid" role="group" aria-label="أيام العد التنازلي للمناسبات">
+                <div class="card event-card" data-event-h="9-1" data-event-name="رمضان">
+                    <h3 class="card-title">صوم شهر رمضان المبارك</h3>
+                    <p class="text-muted">يوم المناسبة: <span class="event-day">الإثنين</span>، 1 رمضان</p>
+                    <div class="countdown-box event-timer" role="timer" data-target-type="hijri">
+                        <span class="days-remaining">120</span> يوم
+                    </div>
+                </div>
+                <div class="card event-card" data-event-h="10-1" data-event-name="الفطر">
+                    <h3 class="card-title">عيد الفطر السعيد</h3>
+                    <p class="text-muted">يوم المناسبة: <span class="event-day">الأربعاء</span>، 1 شوال</p>
+                    <div class="countdown-box event-timer" role="timer" data-target-type="hijri">
+                        <span class="days-remaining">150</span> يوم
+                    </div>
+                </div>
+                <div class="card event-card" data-event-h="12-10" data-event-name="الأضحى">
+                    <h3 class="card-title">عيد الأضحى المبارك</h3>
+                    <p class="text-muted">يوم المناسبة: <span class="event-day">الجمعة</span>، 10 ذو الحجة</p>
+                    <div class="countdown-box event-timer" role="timer" data-target-type="hijri">
+                        <span class="days-remaining">200</span> يوم
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-box" id="aqidah" aria-labelledby="aqidah-heading">
+            <h2 id="aqidah-heading" class="page-title" style="text-align: right;">📜 1. أصول العقيدة والتوحيد (منهج السلف)</h2>
+            <article class="content-article">
+                <p class="summary">
+                    **الغاية:** بيان التوحيد بأنواعه الثلاثة (الربوبية، الألوهية، الأسماء والصفات) كما قرره الإمام أحمد وابن تيمية، بتقديم النص على العقل، وتنزيه الله عن التشبيه والتعطيل، مع تفصيل الأدلة الصحيحة لكل مبحث.
+                </p>
+
+                <div class="content-section">
+                    <h4>1.1 توحيد الألوهية: الغاية والتحكيم الشرعي</h4>
+                    <p>توحيد الألوهية هو توحيد الله بأفعال العباد، وهو الأساس الذي بعث الله به جميع الرسل والأنبياء، من آدم إلى محمد صلى الله عليه وسلم. وهو إفراد الله بجميع أنواع العبادات الظاهرة والباطنة.</p>
+                    <blockquote class="blockquote">
+                        ${وَمَا خَلَقْتُ الْجِنَّ وَالْإِنسَ إِلَّا لِيَعْبُدُونِ}$ <cite>(الذاريات: 56). الدليل القاطع على الحصر في العبادة.</cite>
+                    </blockquote>
+                    <p>ويشمل ذلك عبادة الدعاء، التي هي مخ العبادة. وقد قال صلى الله عليه وسلم: «الدُّعَاءُ هُوَ العِبَادَةُ» <cite>[سنن الترمذي، برقم: 3372، صحيح]</cite>. فمن صرف هذا الحق لغير الله فقد أشرك الشرك الأكبر. إن العبادة لا تصح إلا بشرطين أساسيين: إخلاص النية لله، والمتابعة لرسوله صلى الله عليه وسلم. وقد بين الإمام ابن تيمية أن الإخلاص شرط صحة، والمتابعة شرط قبول. وهذا التفصيل ضروري لتحكيم مفهوم العبادة في حياة المسلم.</p>
+                    <p>ومن أمثلة صرف العبادة لغير الله: الذبح لغير الله، النذر لغير الله، الاستغاثة بالموتى والأولياء فيما لا يقدر عليه إلا الله. قال تعالى: ${قُلْ إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي لِلَّهِ رَبِّ الْعَالَمِينَ}$ (الأنعام: 162). هذا الإجمال في الآية يحتاج إلى تفصيل في كتب الفقه والعقيدة لتبيان أن النسك يشمل كل ما يتقرب به العبد.</p>
+                <div class="content-section">
+                    <h4>1.2 توحيد الأسماء والصفات: منهج الإثبات والتنزيه</h4>
+                    <p>القاعدة السلفية المعتمدة هي إثبات ما أثبته الله لنفسه وما أثبته له رسوله، مع نفي المشابهة للمخلوقين. قاعدتنا هي: ${لَيْسَ كَمِثْلِهِ شَيْءٌ وَهُوَ السَّمِيعُ الْبَصِيرُ}$ (الشورى: 11).</p>
+                    <blockquote class="blockquote">
+                        **قول الإمام مالك:** «الاستواء معلوم، والكيف مجهول، والإيمان به واجب، والسؤال عنه بدعة». <cite>أخرجه البيهقي في الأسماء والصفات.</cite>
+                    </blockquote>
+                    <p>نثبت صفة العلو والاستواء، وصفة اليدين، وصفة الوجه، وصفة النزول، دون تأويل يقتضي التعطيل. التحريف هو صرف اللفظ عن معناه الظاهر إلى معنى آخر دون دليل، وهو منهج أهل الكلام. أما التعطيل فهو نفي الصفة كلياً. والتمثيل هو تشبيه صفات الخالق بصفات المخلوقين. منهجنا وسط بين التشبيه والتعطيل.</p>
+                    <p>من الأمثلة التفصيلية: صفة الغضب. نثبت لله صفة الغضب كما يليق بجلاله، مصداقاً لقوله تعالى: ${وَمَن يَقْتُلْ مُؤْمِنًا مُّتَعَمِّدًا فَجَزَاؤُهُ جَهَنَّمُ خَالِدًا فِيهَا وَغَضِبَ اللَّهُ عَلَيْهِ}$ (النساء: 93). هذا الغضب حقيقة لا مجاز، ولكنه ليس كغضب المخلوقين.</p>
+                <div class="content-section">
+                    <h4>1.3 حقيقة الإيمان: يزيد بالطاعة وينقص بالمعصية</h4>
+                    <p>الإيمان قول باللسان، وتصديق بالجنان، وعمل بالأركان. هذا هو مذهب أهل السنة والجماعة. زيادة الإيمان تكون بالطاعة والعمل الصالح، ونقصانه يكون بالمعصية والفتور.</p>
+                    <blockquote class="blockquote">
+                        **الدليل على الزيادة:** ${وَإِذَا تُلِيَتْ عَلَيْهِمْ آيَاتُهُ زَادَتْهُمْ إِيمَانًا}$ <cite>(الأنفال: 2).</cite>
+                    </blockquote>
+                    <p>وقد ثبت في السنة أن الأعمال شعب من الإيمان. حديث «الإِيمَانُ بِضْعٌ وَسَبْعُونَ شُعْبَةً...» <cite>[صحيح البخاري، برقم: 9]</cite> دليل على دخول الأعمال في مسمى الإيمان. خلافاً للمرجئة الذين أخرجوا العمل عن حقيقة الإيمان. العمل ركن من أركان الإيمان لا يصح دونه، ولا يكفي مجرد التصديق القلبي. وهذا التوضيح أساسي في الرد على الفرق المخالفة لمنهج السلف.</p>
+            </article>
+        </section>
+
+        <section class="section-box" id="fiqh" aria-labelledby="fiqh-heading">
+            <h2 id="fiqh-heading" class="page-title" style="text-align: right;">💡 2. أبواب الفقه المحكم (الاستدلال الراجح)</h2>
+            <article class="content-article">
+                <p class="summary">
+                    **المنهج:** اعتماد القول الراجح المستند إلى الدليل الصحيح من الكتاب والسنة، مع بيان خلاف الأئمة المعتبرين والترجيح بأصول الاستدلال المعتبرة.
+                </p>
+                
+                <div class="content-section">
+                    <h4>2.1 كتاب الطهارة: أحكام المياه وصفة الوضوء</h4>
+                    <p>الأصل في المياه الطهارة والإباحة، ولا يخرج الماء عن طهوريته إلا بتغير أحد أوصافه الثلاثة (اللون، الطعم، الرائحة) بنجاسة. أما إذا خالطه طاهر، فإنه باقٍ على طهوريته ما لم يغلب عليه.</p>
+                    <blockquote class="blockquote">
+                        **الدليل على طهورية الماء:** حديث أبي سعيد الخدري أن النبي صلى الله عليه وسلم قيل له: «أَنَتَوَضَّأُ مِنْ بِئْرِ بُضَاعَةَ؟ فَقَالَ النَّبِيُّ صلى الله عليه وسلم: إِنَّ الْمَاءَ طَهُورٌ لاَ يُنَجِّسُهُ شَيْءٌ». <cite>[سنن أبي داود، برقم: 66، صحيح]</cite>
+                    </blockquote>
+                <div class="content-section">
+                    <h4>2.2 كتاب الصلاة: الفرق بين الركن والواجب والسنة</h4>
+                    <p>تنقسم أفعال الصلاة وأقوالها إلى أركان، وواجبات، وسنن. الركن هو ما لا تصح الصلاة إلا به ولا يجبر بسجود السهو، والواجب ما تصح الصلاة بتركه عمداً ولا يجبر بسجود السهو إن كان سهواً، والسنة ما لا تبطل بتركه مطلقاً.</p>
+                    <blockquote class="blockquote">
+                        **من أدلة الأركان:** حديث المسيء صلاته، حيث أمره النبي صلى الله عليه وسلم بإعادة الصلاة، دليلاً على أن ترك هذه الأفعال يبطلها. <cite>[صحيح البخاري، برقم: 757]</cite>
+                    </blockquote>
+            </article>
+        </section>
+
+        <section class="section-box" id="scholars" aria-labelledby="scholars-heading">
+            <h2 id="scholars-heading" class="page-title" style="text-align: right;">🖋️ 3. منهج الأئمة في الاستدلال والتحكيم</h2>
+            <article class="content-article">
+                <p class="summary">
+                    الاعتماد على فهم الصحابة والتابعين والقرون المفضلة، مع استعمال أصول الاستدلال المعتبرة: الإجماع، القياس الصحيح، وقواعد اللغة لخدمة النص، وتمييز الصحيح من الضعيف.
+                </p>
+
+                <div class="content-section">
+                    <h4>3.1 قاعدة تقديم النص على العقل: حجة ابن تيمية</h4>
+                    <p>قاعدة "درء تعارض العقل والنقل" هي الأساس في التعامل مع النصوص الشرعية. يؤكد شيخ الإسلام على أن العقل السليم لا يمكن أن يعارض النص الصحيح أبداً، وإذا وقع التوهم بالتعارض، فإما أن يكون العقل فاسداً، أو النقل غير صحيح، أو الفهم للنص غير مستقيم. ولا يجوز رد النص لأجل العقل.</p>
+                    <blockquote class="blockquote">
+                        **من درء تعارض العقل والنقل:** «ومما اتفق عليه السلف والأئمة: أنهم يحكمون الكتاب والسنة في جميع أبواب العلم والأصول...» <cite>ابن تيمية، درء تعارض العقل والنقل (1/25).</cite>
+                    </blockquote>
+
+                <div class="content-section">
+                    <h4>3.2 الإجماع والقياس الصحيح كأصول للاستدلال</h4>
+                    <p>الإجماع هو اتفاق جميع المجتهدين من أمة محمد صلى الله عليه وسلم في عصر من العصور على حكم شرعي. وهو دليل قاطع لا يجوز مخالفته. أما القياس الصحيح فهو إلحاق واقعة لا نص فيها بواقعة ورد فيها نص، لاشتراكهما في علة الحكم.</p>
+                    <blockquote class="blockquote">
+                        **الدليل على حجية القياس:** حديث معاذ بن جبل عندما أرسله النبي صلى الله عليه وسلم إلى اليمن: «فَإِنْ لَمْ تَجِدْ؟ قَالَ: أَجْتَهِدُ رَأْيِي وَلا آلُو». <cite>[سنن أبي داود، برقم: 3592، حسن]</cite>
+                    </blockquote>
+            </article>
+        </section>
+
+    </main>
+
+    <footer class="footer" id="siteFooter">
+        <p>جميع الحقوق محفوظة &copy; 2025 درب السالكين. المنهج المتبع: عقيدة وفقه السلف، معتمدين على نصوص القرآن والسنة الصحيحة بأسانيدها.</p>
+        <p style="margin-top: 5px; font-size: 12px;">قواعد العمل: ${لَيْسَ كَمِثْلِهِ شَيْءٌ}$ (الشورى: 11) | لا ينكر المختلف فيه، وينكر المجمع عليه.</p>
+    </footer>
+
+    <script>
+        // الكود البرمجي هنا يمثل النسخة المطورة التي تم الاتفاق عليها.
+        const App = (function() {
+            const DOM = {
+                clock: document.querySelector('.header__clock'),
+                prayerItems: document.querySelectorAll('.prayer-times__item'),
+                nextPrayerDisplay: document.getElementById('next-prayer-name'),
+                prayerCountdownBox: document.querySelector('.countdown-box[data-target-type="prayer"]'),
+                eventCards: document.querySelectorAll('.event-card'),
+            };
+            
+            function pad(num) { return num < 10 ? '0' + num : num; }
+
+            const TimeModule = (function() {
+                function updateCurrentTime() {
+                    const now = new Date();
+                    const hours = now.getHours();
+                    const minutes = pad(now.getMinutes());
+                    const seconds = pad(now.getSeconds());
+                    const ampm = hours >= 12 ? 'م' : 'ص';
+                    const formattedTime = `${pad(hours % 12 || 12)}:${minutes}:${seconds} ${ampm}`;
+                    const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                    const formattedDate = now.toLocaleDateString('ar-EG', dateOptions);
+                    if (DOM.clock) {
+                        DOM.clock.innerHTML = `${formattedDate} ${formattedTime} <span class="header__clock-hijri" id="nowHijri">2 رمضان 1447 هـ</span>`;
+                    }
+                }
+                return { updateCurrentTime };
+            })();
+
+            const PrayerModule = (function() {
+                const PRAYER_TIMES = Array.from(DOM.prayerItems).map(item => {
+                    const [h, m] = item.dataset.time.split(':').map(Number);
+                    const name = item.dataset.prayerName;
+                    return { name, h, m };
+                });
+                let nextPrayerIndex = -1;
+
+                function findNextPrayer() {
+                    const now = new Date();
+                    const nowMinutes = now.getHours() * 60 + now.getMinutes();
+                    for (let i = 0; i < PRAYER_TIMES.length; i++) {
+                        const prayerMinutes = PRAYER_TIMES[i].h * 60 + PRAYER_TIMES[i].m;
+                        if (prayerMinutes > nowMinutes) {
+                            nextPrayerIndex = i;
+                            return PRAYER_TIMES[i];
+                        }
+                    }
+                    nextPrayerIndex = 0;
+                    return PRAYER_TIMES[0]; 
+                }
+                
+                function updateCountdown() {
+                    const nextPrayer = findNextPrayer();
+                    if (!nextPrayer || !DOM.prayerCountdownBox) return;
+                    const now = new Date();
+                    let target = new Date();
+                    target.setHours(nextPrayer.h, nextPrayer.m, 0, 0);
+
+                    if (nextPrayerIndex === 0 && now.getHours() >= PRAYER_TIMES[PRAYER_TIMES.length - 1].h) {
+                        target.setDate(target.getDate() + 1);
+                    }
+                    const diff = target.getTime() - now.getTime();
+                    if (diff < 0) {
+                        PrayerModule.updateCountdown();
+                        return;
+                    } 
+                    const hours = Math.floor(diff / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                    const countdownText = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+                    DOM.nextPrayerDisplay.innerHTML = `يتبقى على صلاة <span class="text-accent">${nextPrayer.name}</span>:`;
+                    DOM.prayerCountdownBox.textContent = countdownText;
+                }
+                return { updateCountdown };
+            })();
+
+            const EventsModule = (function() {
+                const HIJRI_EVENTS_MAP = {
+                    '9-1': { month: 2, day: 1, name_ar: 'رمضان' },
+                    '10-1': { month: 3, day: 1, name_ar: 'الفطر' },
+                    '12-10': { month: 5, day: 8, name_ar: 'الأضحى' }
+                };
+                
+                function updateEventCountdowns() {
+                    const now = new Date();
+                    const currentYear = now.getFullYear();
+                    
+                    DOM.eventCards.forEach(card => {
+                        const hijriKey = card.dataset.eventH;
+                        const eventData = HIJRI_EVENTS_MAP[hijriKey];
+                        if (!eventData) return;
+
+                        let targetDate = new Date(currentYear, eventData.month, eventData.day);
+                        if (targetDate.getTime() < now.getTime()) {
+                            targetDate.setFullYear(currentYear + 1);
+                        }
+                        const diffTime = targetDate.getTime() - now.getTime();
+                        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                        
+                        const countdownBox = card.querySelector('.event-timer .days-remaining');
+                        if (countdownBox && diffDays >= 0) {
+                            countdownBox.textContent = diffDays;
+                        }
+                    });
+                }
+                return { updateEventCountdowns };
+            })();
+
+            function init() {
+                TimeModule.updateCurrentTime();
+                PrayerModule.updateCountdown();
+                EventsModule.updateEventCountdowns();
+                
+                setInterval(() => {
+                    TimeModule.updateCurrentTime();
+                    PrayerModule.updateCountdown();
+                }, 1000);
+                
+                setInterval(() => {
+                    EventsModule.updateEventCountdowns();
+                }, 1000 * 60 * 60); 
+            }
+            return { init };
+        })();
+        document.addEventListener('DOMContentLoaded', App.init);
+    </script>
+    </body>
+</html>
+
+<style>
+/* ============================================================
+    style.css — النسخة المعمارية النهائية (V3.0)
+    ============================================================ */
+
+/* ------------------ 🎨 متغيرات الواجهة (Design Tokens) ------------------ */
+:root {
+  /* الألوان (Color Palette) */
+  --color-bg-primary: #0d0d0d;
+  --color-bg-secondary: #1a1a1a;
+  --color-accent: #cdb48b; /* اللون المميز: لون التراث والروحانية */
+  --color-muted: #9fa9a0;
+  --color-text-main: #efe8d8;
+
+  /* الشفافيات والمؤثرات (Effects) */
+  --color-card-bg: rgba(255, 255, 255, 0.04);
+  --color-glass-effect: rgba(255, 255, 255, 0.05);
+  --color-subtle-border: rgba(255, 255, 255, 0.03);
+
+  /* المسافات (Spacing System - نظام الثمانية) */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px; /* تم توحيدها لـ 16px */
+  --space-lg: 24px;
+  --space-xl: 48px;
+
+  /* الحدود والظلال (Borders & Shadows) */
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --shadow-level-1: 0 4px 12px rgba(0,0,0,0.5);
+  --shadow-level-2: 0 8px 20px rgba(0,0,0,0.8); /* تم زيادة حدة الظل */
+
+  /* الإعدادات العامة */
+  --max-width: 1200px;
+  --transition-default: all 0.35s ease; /* زيادة طفيفة لتحسين السلاسة */
+}
+
+/* ------------------ ⚙️ القواعد الأساسية (BASE Rules) ------------------ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  /* توحيد الخطوط */
+  font-family: "Amiri", "Almarai", serif;
+  background: linear-gradient(180deg, var(--color-bg-primary), var(--color-bg-secondary));
+  color: var(--color-text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: var(--transition-default);
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: "Amiri", serif; font-weight: 700; }
+a { text-decoration: none; color: inherit; }
+p { margin-bottom: var(--space-md); }
+.summary { font-size: 1.1rem; color: var(--color-muted); border-right: 3px solid var(--color-accent); padding-right: var(--space-md); margin-bottom: var(--space-lg); }
+.text-accent { color: var(--color-accent); font-weight: 700; }
+
+/* ------------------ 🧱 تنسيقات التخطيط (LAYOUT) ------------------ */
+.container { 
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+}
+
+.main-content {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    animation: fadeIn 0.6s ease;
+}
+
+.page-title {
+  font-size: 32px;
+  text-align: center;
+  color: var(--color-accent);
+  margin-bottom: var(--space-lg);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* ------------------ 🧭 مكون HEADER (Block: header) ------------------ */
+.header { 
+  position: sticky; top: 0; z-index: 999;
+  backdrop-filter: blur(12px);
+  background: linear-gradient(180deg, rgba(20,20,20,0.95), rgba(10,10,10,0.85));
+  border-bottom: 1px solid var(--color-subtle-border);
+  box-shadow: var(--shadow-level-2);
+  transition: var(--transition-default);
+}
+
+.header__inner { 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  padding: var(--space-md) var(--space-lg); /* تعديل الـ padding */
+}
+
+.header__logo { 
+  font-size: 38px !important; /* اعتماد التعديل الجديد */
+  color: var(--color-accent);
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
+  text-shadow: 2px 2px 10px rgba(205,180,139,0.3); /* ظل خفيف على اللوجو */
+}
+
+.header__tagline { 
+  color: var(--color-muted);
+  margin-top: var(--space-xs);
+  font-size: 14px;
+}
+
+.header__clock { /* Element: header__clock */
+  text-align: left;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-text-main);
+  line-height: 1.4;
+}
+
+.header__clock-hijri { 
+  display: block;
+  color: var(--color-muted);
+  font-size: 14px;
+  margin-top: var(--space-xs);
+}
+
+/* ------------------ 🧭 مكون NAV (Block: nav-menu) ------------------ */
+.nav-menu { 
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-lg);
+  border-top: 1px solid var(--color-subtle-border);
+  border-bottom: 1px solid var(--color-subtle-border);
+  background: linear-gradient(180deg, rgba(25,25,25,0.7), rgba(10,10,10,0.5));
+  position: sticky; top: 78px; /* تم تعديل القيمة لتكون أسفل الـ Header */
+  z-index: 998;
+}
+
+.nav-menu__btn { 
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  color: var(--color-text-main);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: 16px;
+  transition: var(--transition-default);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.nav-menu__btn::after {
+  /* تأثير التظليل عند التحويم */
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  top: 0;
+  left: 0;
+  background: var(--color-accent);
+  opacity: 0.2;
+  transition: height 0.3s ease;
+  z-index: -1;
+}
+
+.nav-menu__btn:hover::after { height: 100%; }
+
+.nav-menu__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-level-1);
+}
+
+.nav-menu__btn--active { 
+  background: linear-gradient(90deg, rgba(205,180,139,0.15), rgba(205,180,139,0.05));
+  border: 1px solid rgba(205,180,139,0.3);
+  color: var(--color-accent);
+}
+
+/* ------------------ 🖼️ مكون CARD (Block: card) ------------------ */
+.card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg); 
+  min-height: 120px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition-default);
+  box-shadow: var(--shadow-level-1);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02); /* تعديل الـ Scale قليلاً */
+  box-shadow: var(--shadow-level-2);
+}
+
+.card::before {
+  /* تأثير الدائرة المشعة */
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+  opacity: 0.1;
+  transition: var(--transition-default);
+}
+
+.card:hover::before { opacity: 0.25; }
+
+/* ------------------ 📦 مكون SECTION-BOX (Block: section-box) ------------------ */
+.section-box { 
+  background: var(--color-glass-effect);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-level-1);
+  backdrop-filter: blur(8px);
+  transition: var(--transition-default);
+}
+
+.section-box:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-level-2);
+}
+
+/* ------------------ 🕋 مكون PRAYER-TIMES (Block: prayer-times) ------------------ */
+.prayer-times { 
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: space-around;
+  margin-top: var(--space-md);
+}
+
+.prayer-times__item { 
+  background: var(--color-card-bg);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  min-width: 140px;
+  text-align: center;
+  font-weight: 600;
+  transition: var(--transition-default);
+  box-shadow: var(--shadow-level-1);
+}
+
+.prayer-times__item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-level-2);
+}
+
+/* ------------------ ⏳ مكون COUNTDOWN (Block: countdown-box) ------------------ */
+.countdown-box { 
+  background: var(--color-card-bg);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  min-width: 220px;
+  text-align: center;
+  font-size: 24px; /* تكبير الخط للعد التنازلي */
+  font-weight: 700;
+  box-shadow: var(--shadow-level-1);
+  transition: var(--transition-default);
+  margin: var(--space-md) auto 0; /* توسيط */
+}
+
+.countdown-box:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-level-2);
+}
+
+/* ------------------ 🌙 مكون المناسبات الدينية (EVENTS) - جديد ------------------ */
+.event-cards-grid {
+    display: grid;
+    /* تخطيط مرن: 3 أعمدة في الشاشات الكبيرة، وتتغير تلقائياً */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-md);
+}
+
+.event-card {
+    min-height: auto; /* إزالة الحد الأدنى للطول */
+    text-align: center;
+    /* إزالة تأثير الـ hover الخاص بالـ card block إذا أردنا أن يكون التفاعل مختلفاً */
+}
+
+.event-card h3 {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    margin-bottom: var(--space-sm);
+}
+
+.event-timer {
+    /* تخصيص مؤقت العد التنازلي داخل البطاقة */
+    font-size: 1.8rem;
+    padding: var(--space-sm);
+    margin: var(--space-md) auto 0;
+    background: var(--color-glass-effect);
+    border: 1px solid rgba(205,180,139,0.1);
+}
+
+.event-card:hover {
+    /* تغيير تأثير التحويم ليكون أقل شدة */
+    transform: translateY(-5px); 
+    box-shadow: var(--shadow-level-2);
+}
+
+/* ------------------ محتوى المقالات والقصاصات ------------------ */
+.blockquote {
+    border-right: 4px solid var(--color-accent);
+    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-lg) 0;
+    font-style: italic;
+    background: rgba(205,180,139,0.05);
+    border-radius: var(--radius-md);
+}
+
+.blockquote cite {
+    display: block;
+    text-align: left;
+    font-size: 0.9em;
+    color: var(--color-muted);
+    margin-top: var(--space-sm);
+    font-style: normal;
+}
+
+/* ------------------ 📱 استجابة الشاشة (MEDIA QUERIES) ------------------ */
+
+@media (max-width: 980px) {
+  /* للـ Header */
+  .header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+  .nav-menu { top: 120px; flex-wrap: wrap; } /* تعديل موضع الـ nav */
+  .nav-menu__btn { flex-basis: 45%; } /* لتوزيع الأزرار في سطرين */
+  .prayer-times { justify-content: space-between; }
+  .prayer-times__item { min-width: 100px; padding: var(--space-sm) var(--space-md); font-size: 0.9rem; }
+}
+
+@media (max-width: 600px) {
+  .nav-menu__btn { flex-basis: 100%; } /* الأزرار تأخذ العرض الكامل */
+  .container { padding-left: var(--space-sm); padding-right: var(--space-sm); }
+  .header__logo { font-size: 30px !important; }
+  .main-content { padding: 0; margin-top: var(--space-md); }
+  .prayer-times { flex-direction: column; align-items: stretch; }
+  .countdown-box { min-width: 100%; }
+}
+
+/* ------------------ 💫 الحركات (ANIMATIONS) ------------------ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------ 📃 مكون FOOTER (Block: footer) ------------------ */
+.footer { 
+  max-width: var(--max-width);
+  margin: var(--space-xl) auto var(--space-lg);
+  padding: var(--space-lg);
+  color: var(--color-muted);
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+</style>
+    </head>
+
+<body>
+    
+    <header class="header" id="siteHeader">...</header>
+    <main class="container main-content">...</main>
+    <footer class="footer" id="siteFooter">...</footer>
+    
+    <script>
+/* ============================================================
+    app.js — النسخة المتطورة والمنظمة (Modular JS)
+    
+    ملاحظة: لحساب التاريخ الهجري بدقة، يجب استخدام مكتبة خارجية مثل 'moment-hijri' 
+    أو 'Intl.DateTimeFormat' مع خيار التقويم الهجري، وقد تم استخدام قيمة ثابتة 
+    مؤقتاً في هذا الكود لعرض التنسيق الصحيح فقط.
+    
+    كما تم استخدام تواريخ ميلادية تقديرية للمناسبات الهجرية لحساب العد التنازلي.
+    ============================================================ */
+
+const App = (function() {
+    
+    // 1. تحديد عناصر DOM الأساسية
+    const DOM = {
+        clock: document.querySelector('.header__clock'),
+        hijriDate: document.getElementById('nowHijri'),
+        prayerItems: document.querySelectorAll('.prayer-times__item'),
+        nextPrayerDisplay: document.getElementById('next-prayer-name'),
+        prayerCountdownBox: document.querySelector('.countdown-box[data-target-type="prayer"]'),
+        eventCards: document.querySelectorAll('.event-card'),
+    };
+    
+    // دالة مساعدة لتنسيق الأرقام (إضافة صفر للأرقام الأحادية)
+    function pad(num) {
+        return num < 10 ? '0' + num : num;
+    }
+
+    /* ------------------ وحدة الوقت والتاريخ (TimeModule) ------------------ */
+    const TimeModule = (function() {
+        
+        function updateCurrentTime() {
+            const now = new Date();
+            
+            // 1. تنسيق الساعة والدقائق والثواني
+            const hours = now.getHours();
+            const minutes = pad(now.getMinutes());
+            const seconds = pad(now.getSeconds());
+            const ampm = hours >= 12 ? 'م' : 'ص';
+            const formattedTime = `${pad(hours % 12 || 12)}:${minutes}:${seconds} ${ampm}`;
+            
+            // 2. تنسيق التاريخ الميلادي باللغة العربية
+            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = now.toLocaleDateString('ar-EG', dateOptions);
+            
+            // 3. تحديث عنصر الساعة في الرأس
+            if (DOM.clock) {
+                // ملاحظة: "2 رمضان 1447 هـ" قيمة ثابتة مؤقتاً
+                DOM.clock.innerHTML = `${formattedDate} ${formattedTime} <span class="header__clock-hijri" id="nowHijri">2 رمضان 1447 هـ</span>`;
+            }
+        }
+
+        return { updateCurrentTime };
+    })();
+
+    /* ------------------ وحدة أوقات الصلاة (PrayerModule) ------------------ */
+    const PrayerModule = (function() {
+        
+        // استخراج أوقات الصلاة من HTML مرة واحدة
+        const PRAYER_TIMES = Array.from(DOM.prayerItems).map(item => {
+            const [h, m] = item.dataset.time.split(':').map(Number);
+            const name = item.dataset.prayerName;
+            return { name, h, m };
+        });
+
+        let nextPrayerIndex = -1;
+
+        // تحديد الصلاة القادمة (أقرب وقت بعد الآن)
+        function findNextPrayer() {
+            const now = new Date();
+            const nowMinutes = now.getHours() * 60 + now.getMinutes();
+            
+            for (let i = 0; i < PRAYER_TIMES.length; i++) {
+                const prayerMinutes = PRAYER_TIMES[i].h * 60 + PRAYER_TIMES[i].m;
+                if (prayerMinutes > nowMinutes) {
+                    nextPrayerIndex = i;
+                    return PRAYER_TIMES[i];
+                }
+            }
+            
+            // إذا كانت جميع الأوقات قد مرت، فإن الصلاة القادمة هي الفجر ليوم غد
+            nextPrayerIndex = 0;
+            return PRAYER_TIMES[0]; 
+        }
+        
+        function updateCountdown() {
+            const nextPrayer = findNextPrayer();
+            if (!nextPrayer || !DOM.prayerCountdownBox) return;
+
+            const now = new Date();
+            let target = new Date();
+            target.setHours(nextPrayer.h, nextPrayer.m, 0, 0);
+
+            // تعديل التاريخ المستهدف ليوم غد إذا كانت الصلاة القادمة هي الفجر وقد مر وقت العشاء
+            if (nextPrayerIndex === 0 && now.getHours() >= PRAYER_TIMES[PRAYER_TIMES.length - 1].h) {
+                target.setDate(target.getDate() + 1);
+            }
+
+            const diff = target.getTime() - now.getTime();
+            
+            if (diff < 0) {
+                // إذا كان الوقت قد فات للتو، يتم تحديث الصفحة فوراً لتجد أقرب صلاة
+                PrayerModule.updateCountdown();
+                return;
+            } 
+
+            // تحويل الفرق إلى ساعات ودقائق وثواني
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            const countdownText = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+            
+            // تحديث الـ DOM
+            DOM.nextPrayerDisplay.innerHTML = `يتبقى على صلاة <span class="text-accent">${nextPrayer.name}</span>:`;
+            DOM.prayerCountdownBox.textContent = countdownText;
+        }
+
+        return { updateCountdown };
+    })();
+
+    /* ------------------ وحدة المناسبات الدينية (EventsModule) ------------------ */
+    const EventsModule = (function() {
+        
+        // الأهداف الميلادية للمناسبات الهجرية في السنة الحالية (بناءً على 1447 هـ)
+        // (شهر ميلادي - يوم ميلادي): يرجى تحديث هذه التواريخ سنوياً
+        const HIJRI_EVENTS_MAP = {
+            '9-1': { month: 2, day: 1, name_ar: 'رمضان' }, // مارس
+            '10-1': { month: 3, day: 1, name_ar: 'الفطر' }, // أبريل
+            '12-10': { month: 5, day: 8, name_ar: 'الأضحى' } // يونيو
+        };
+        
+        function updateEventCountdowns() {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            
+            DOM.eventCards.forEach(card => {
+                const hijriKey = card.dataset.eventH; // مثال: "9-1"
+                const eventData = HIJRI_EVENTS_MAP[hijriKey];
+                
+                if (!eventData) return;
+
+                // بناء التاريخ المستهدف الميلادي لهذا العام (الشهر يبدأ من 0)
+                let targetDate = new Date(currentYear, eventData.month, eventData.day);
+                
+                // إذا كان التاريخ قد فات هذا العام، استخدم تاريخ العام القادم
+                if (targetDate.getTime() < now.getTime()) {
+                    targetDate.setFullYear(currentYear + 1);
+                }
+                
+                const diffTime = targetDate.getTime() - now.getTime();
+                // حساب الأيام المتبقية (تقريب للأعلى)
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                
+                const countdownBox = card.querySelector('.event-timer .days-remaining');
+                
+                if (countdownBox && diffDays >= 0) {
+                    countdownBox.textContent = diffDays;
+                }
+            });
+        }
+
+        return { updateEventCountdowns };
+    })();
+
+
+    // 4. دالة التهيئة والتشغيل (Initialization)
+    function init() {
+        // 1. التشغيل الأولي للوحدات
+        TimeModule.updateCurrentTime();
+        PrayerModule.updateCountdown();
+        EventsModule.updateEventCountdowns();
+        
+        // 2. تحديث متكرر (كل ثانية للساعة والصلاة)
+        setInterval(() => {
+            TimeModule.updateCurrentTime();
+            PrayerModule.updateCountdown();
+        }, 1000);
+        
+        // 3. تحديث متكرر (كل ساعة للمناسبات الدينية)
+        setInterval(() => {
+            EventsModule.updateEventCountdowns();
+        }, 1000 * 60 * 60); 
+    }
+
+    return { init };
+})();
+
+// تشغيل التطبيق بمجرد تحميل الصفحة
+document.addEventListener('DOMContentLoaded', App.init);
+</script>
+    </body>
+</html>
+
+
